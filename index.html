@@ -2,627 +2,641 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🚀 Gmail Creator Pro - Multi Language</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Oluşturucu</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --primary: #00d4ff;
-            --secondary: #7b2ffc;
-            --danger: #ff6b6b;
-            --success: #00b894;
-            --warning: #fdcb6e;
-            --bg-dark: #0a0a1a;
-            --bg-card: rgba(255, 255, 255, 0.05);
-            --text: #fff;
-            --text-muted: #888;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a1a2e 100%);
-            min-height: 100vh;
-            padding: 10px;
-            color: var(--text);
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
+            font-family: Arial, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
             padding: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
         }
-
-        /* HEADER */
-        .header {
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 20px;
+        }
+        h1 {
             text-align: center;
-            padding: 10px 0;
-        }
-
-        .header h1 {
-            font-size: 1.8em;
-            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--danger));
+            font-size: 24px;
+            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glow 2s ease-in-out infinite alternate;
+            margin-bottom: 4px;
         }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
-            to { text-shadow: 0 0 40px rgba(123, 47, 252, 0.5); }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
-
-        .header p {
-            color: var(--text-muted);
-            font-size: 0.8em;
-        }
-
-        /* LANGUAGE SELECTOR */
-        .lang-selector {
+        .lang-section {
             display: flex;
-            gap: 5px;
             flex-wrap: wrap;
+            gap: 4px;
             justify-content: center;
-            margin: 10px 0;
+            margin-bottom: 15px;
         }
-
         .lang-btn {
-            padding: 5px 12px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            background: transparent;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 0.7em;
-            transition: all 0.3s;
-        }
-
-        .lang-btn:hover, .lang-btn.active {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(0, 212, 255, 0.1);
-        }
-
-        /* CONTROL PANEL */
-        .control-panel {
-            background: var(--bg-card);
+            padding: 4px 10px;
+            border: 1px solid #333;
             border-radius: 15px;
-            padding: 15px;
-            margin: 10px 0;
+            background: transparent;
+            color: #888;
+            cursor: pointer;
+            font-size: 11px;
+            transition: 0.3s;
         }
-
-        .input-group {
+        .lang-btn.active {
+            border-color: #00d4ff;
+            color: #00d4ff;
+            background: rgba(0,212,255,0.1);
+        }
+        .input-area {
             display: flex;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-
-        .input-group input {
+        .input-area input {
             flex: 1;
-            padding: 15px;
-            font-size: 1.1em;
-            background: rgba(0, 0, 0, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 14px;
+            border: 1px solid #333;
             border-radius: 12px;
-            color: var(--text);
-            outline: none;
+            background: #0f0f1a;
+            color: #fff;
+            font-size: 18px;
             text-align: center;
             font-weight: bold;
+            outline: none;
         }
-
-        .input-group input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        .input-area input:focus {
+            border-color: #00d4ff;
         }
-
-        .btn-group {
+        .main-buttons {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             gap: 8px;
+            margin-bottom: 12px;
         }
-
         .btn {
-            padding: 12px 15px;
+            padding: 14px;
             border: none;
             border-radius: 12px;
-            font-size: 0.9em;
-            font-weight: bold;
+            font-size: 14px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: 0.3s;
+            color: #fff;
         }
-
         .btn:active {
             transform: scale(0.95);
         }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            box-shadow: 0 5px 25px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, var(--danger), #ee5a24);
-            color: #fff;
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, var(--success), #00a86b);
-            color: #fff;
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, var(--warning), #f39c12);
-            color: #fff;
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #a29bfe, #6c5ce7);
-            color: #fff;
-        }
-
-        .btn-pink {
-            background: linear-gradient(135deg, #fd79a8, #e84393);
-            color: #fff;
-        }
-
         .btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
-            transform: none !important;
+            transform: none;
         }
-
-        /* QUICK BUTTONS */
-        .quick-buttons {
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff, #7b2ffc);
+        }
+        .btn-danger {
+            background: #e74c3c;
+        }
+        .btn-success {
+            background: #2ecc71;
+        }
+        .quick-area {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 5px;
-            margin-top: 10px;
+            margin-bottom: 15px;
         }
-
         .quick-btn {
-            padding: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            padding: 10px 0;
+            border: 1px solid #333;
+            border-radius: 10px;
             background: transparent;
-            color: var(--text-muted);
+            color: #aaa;
             cursor: pointer;
-            font-size: 0.8em;
-            transition: all 0.3s;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
         }
-
         .quick-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff;
+            color: #00d4ff;
+            background: rgba(0,212,255,0.05);
         }
-
-        /* OPTIONS */
-        .options-grid {
+        .options {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin: 10px 0;
+            margin-bottom: 15px;
         }
-
-        .option-item {
+        .option {
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
-        }
-
-        .option-item label {
-            font-size: 0.8em;
-            color: var(--text-muted);
-            cursor: pointer;
-        }
-
-        .switch {
-            position: relative;
-            width: 40px;
-            height: 22px;
-            flex-shrink: 0;
-        }
-
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #333;
-            transition: 0.3s;
-            border-radius: 22px;
-        }
-
-        .slider:before {
-            content: "";
-            position: absolute;
-            height: 16px;
-            width: 16px;
-            left: 3px;
-            bottom: 3px;
-            background: white;
-            transition: 0.3s;
-            border-radius: 50%;
-        }
-
-        .switch input:checked + .slider {
-            background: var(--primary);
-        }
-
-        .switch input:checked + .slider:before {
-            transform: translateX(18px);
-        }
-
-        /* PROGRESS */
-        .progress-container {
-            margin: 10px 0;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 12px;
+            background: #0f0f1a;
             border-radius: 10px;
-            height: 6px;
+            font-size: 13px;
+            color: #ccc;
+        }
+        .option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #00d4ff;
+        }
+        .option select {
+            flex: 1;
+            padding: 6px 8px;
+            background: #0f0f1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+        }
+        .option input[type="number"] {
+            width: 50px;
+            padding: 6px;
+            background: #0f0f1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            outline: none;
+        }
+        .progress {
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            margin-bottom: 15px;
             overflow: hidden;
         }
-
         .progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--danger));
             width: 0%;
-            border-radius: 10px;
+            background: linear-gradient(90deg, #00d4ff, #7b2ffc);
             transition: width 0.3s;
         }
-
-        /* MAIL LIST */
         .mail-list {
-            max-height: 350px;
+            max-height: 300px;
             overflow-y: auto;
-            margin: 10px 0;
-            border-radius: 12px;
-            padding: 5px;
+            margin-bottom: 12px;
         }
-
         .mail-list::-webkit-scrollbar {
             width: 4px;
         }
-
-        .mail-list::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-
         .mail-list::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--primary), var(--secondary));
-            border-radius: 10px;
+            background: #7b2ffc;
+            border-radius: 2px;
         }
-
         .mail-item {
-            padding: 10px 12px;
-            margin: 4px 0;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 8px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 8px;
-            animation: slideIn 0.3s ease;
-            transition: all 0.3s;
+            padding: 10px 12px;
+            margin-bottom: 4px;
+            background: #0f0f1a;
+            border-radius: 8px;
+            animation: fadeIn 0.3s ease;
         }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .mail-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
         .mail-text {
-            flex: 1;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85em;
-            font-weight: bold;
+            font-family: monospace;
+            font-size: 13px;
+            font-weight: 600;
             word-break: break-all;
+            flex: 1;
         }
-
         .mail-actions {
             display: flex;
             gap: 5px;
+            margin-left: 10px;
         }
-
-        .mail-btn {
+        .mail-actions button {
             padding: 4px 8px;
             border: none;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+            color: #888;
             cursor: pointer;
-            font-size: 0.8em;
+            font-size: 12px;
             transition: 0.3s;
         }
-
-        .mail-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text);
+        .mail-actions button:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
         }
-
-        /* STATS */
+        .empty-message {
+            text-align: center;
+            color: #555;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+        .empty-message span {
+            display: block;
+            font-size: 12px;
+            color: #444;
+            margin-top: 4px;
+        }
         .stats {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 8px;
-            padding: 10px 5px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 10px;
+            padding-top: 12px;
+            border-top: 1px solid #222;
         }
-
         .stat-item {
             text-align: center;
         }
-
-        .stat-item .label {
-            color: var(--text-muted);
-            font-size: 0.6em;
+        .stat-label {
+            font-size: 10px;
+            color: #666;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
-        .stat-item .value {
-            color: var(--primary);
-            font-size: 1.1em;
-            font-weight: bold;
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-top: 2px;
         }
+        .c1 { color: #00d4ff; }
+        .c2 { color: #7b2ffc; }
+        .c3 { color: #2ecc71; }
+        .c4 { color: #e74c3c; }
+        .c5 { color: #f1c40f; }
+        .c6 { color: #fd79a8; }
 
-        /* NOTIFICATION */
-        .notification {
+        .toast {
             position: fixed;
-            top: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
             padding: 12px 24px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            z-index: 9999;
+            background: rgba(0,0,0,0.95);
+            border: 1px solid #333;
+            color: #fff;
+            font-size: 14px;
+            z-index: 999;
             display: none;
             max-width: 90%;
             text-align: center;
-            font-size: 0.9em;
-            animation: slideDown 0.3s ease;
         }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+        .toast.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
             to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
+        .toast.success { border-color: #2ecc71; }
+        .toast.error { border-color: #e74c3c; }
+        .toast.info { border-color: #00d4ff; }
 
-        .notification.show {
-            display: block;
-        }
-        .notification.success { border-color: var(--success); }
-        .notification.error { border-color: var(--danger); }
-        .notification.info { border-color: var(--primary); }
-
-        /* COLOR CLASSES */
-        .c1 { color: #00d4ff; }
-        .c2 { color: #7b2ffc; }
-        .c3 { color: #00b894; }
-        .c4 { color: #ff6b6b; }
-        .c5 { color: #fdcb6e; }
-        .c6 { color: #fd79a8; }
-        .c7 { color: #00cec9; }
-        .c8 { color: #e17055; }
-        .c9 { color: #a29bfe; }
-        .c10 { color: #55efc4; }
-
-        /* FILTER SECTION */
-        .filter-section {
-            display: none;
-            margin: 10px 0;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-        }
-
-        .filter-section.active {
-            display: block;
-        }
-
-        .filter-input {
-            width: 100%;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--text);
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
-
-        /* RESPONSIVE */
         @media (max-width: 480px) {
-            .container { padding: 10px; }
-            .header h1 { font-size: 1.4em; }
-            .btn { font-size: 0.75em; padding: 10px; }
-            .quick-buttons { grid-template-columns: repeat(3, 1fr); }
-            .options-grid { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: 1fr 1fr 1fr; }
-            .btn-group { grid-template-columns: 1fr; }
-            .mail-text { font-size: 0.75em; }
-        }
-
-        /* DARK MODE TOGGLE */
-        .dark-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            font-size: 1.5em;
-            cursor: pointer;
-            box-shadow: 0 5px 25px rgba(0, 212, 255, 0.3);
-            z-index: 100;
-            transition: 0.3s;
-        }
-
-        .dark-toggle:hover {
-            transform: scale(1.1);
-        }
-
-        /* EXPORT SECTION */
-        .export-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
-            margin-top: 10px;
-        }
-
-        /* LOADING SPINNER */
-        .spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255,255,255,0.1);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            .container { padding: 15px; }
+            .main-buttons { grid-template-columns: 1fr; }
+            .quick-area { grid-template-columns: repeat(4, 1fr); }
+            .options { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container" id="app">
-        <!-- HEADER -->
-        <div class="header">
-            <h1 id="title">🚀 Gmail Creator Pro</h1>
-            <p id="subtitle">⚡ 6 Character | Letters Only | Unlimited</p>
+<div class="container">
+    <h1 id="title">📧 Gmail Oluşturucu</h1>
+    <p class="subtitle" id="subtitle">⚡ 6 haneli · Sadece harf</p>
+
+    <div class="lang-section" id="langSection">
+        <button class="lang-btn active" data-lang="tr" onclick="setLang('tr')">🇹🇷 TR</button>
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="de" onclick="setLang('de')">🇩🇪 DE</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')">🇪🇸 ES</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" data-lang="it" onclick="setLang('it')">🇮🇹 IT</button>
+        <button class="lang-btn" data-lang="pt" onclick="setLang('pt')">🇵🇹 PT</button>
+        <button class="lang-btn" data-lang="ru" onclick="setLang('ru')">🇷🇺 RU</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">🇸🇦 AR</button>
+        <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">🇯🇵 JA</button>
+        <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">🇰🇷 KO</button>
+        <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">🇨🇳 ZH</button>
+    </div>
+
+    <div class="input-area">
+        <input type="number" id="countInput" value="10" min="1" max="10000">
+    </div>
+
+    <div class="main-buttons">
+        <button class="btn btn-primary" id="generateBtn" onclick="generate()">🚀 OLUŞTUR</button>
+        <button class="btn btn-danger" onclick="clearAll()">🗑️ TEMİZLE</button>
+        <button class="btn btn-success" onclick="saveAll()">💾 KAYDET</button>
+    </div>
+
+    <div class="quick-area">
+        <button class="quick-btn" onclick="quickGen(1)">1</button>
+        <button class="quick-btn" onclick="quickGen(5)">5</button>
+        <button class="quick-btn" onclick="quickGen(10)">10</button>
+        <button class="quick-btn" onclick="quickGen(50)">50</button>
+        <button class="quick-btn" onclick="quickGen(100)">100</button>
+        <button class="quick-btn" onclick="quickGen(500)">500</button>
+        <button class="quick-btn" onclick="quickGen(1000)">1000</button>
+        <button class="quick-btn" onclick="quickGen(5000)">5000</button>
+        <button class="quick-btn" onclick="quickGen(10000)">10000</button>
+        <button class="quick-btn" onclick="copyAll()">📋 KOPYALA</button>
+        <button class="quick-btn" onclick="uniqueOnly()">🔁 TEKİL</button>
+        <button class="quick-btn" onclick="sortEmails()">📊 SIRALA</button>
+    </div>
+
+    <div class="options">
+        <div class="option">
+            <input type="checkbox" id="optNumbers">
+            <label id="lblNumbers">Sayı Ekle</label>
         </div>
-
-        <!-- LANGUAGE SELECTOR -->
-        <div class="lang-selector" id="langSelector">
-            <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">🇬🇧 EN</button>
-            <button class="lang-btn" data-lang="tr" onclick="setLanguage('tr')">🇹🇷 TR</button>
-            <button class="lang-btn" data-lang="de" onclick="setLanguage('de')">🇩🇪 DE</button>
-            <button class="lang-btn" data-lang="es" onclick="setLanguage('es')">🇪🇸 ES</button>
-            <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">🇫🇷 FR</button>
-            <button class="lang-btn" data-lang="it" onclick="setLanguage('it')">🇮🇹 IT</button>
-            <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">🇵🇹 PT</button>
-            <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">🇷🇺 RU</button>
-            <button class="lang-btn" data-lang="ar" onclick="setLanguage('ar')">🇸🇦 AR</button>
-            <button class="lang-btn" data-lang="ja" onclick="setLanguage('ja')">🇯🇵 JA</button>
-            <button class="lang-btn" data-lang="ko" onclick="setLanguage('ko')">🇰🇷 KO</button>
-            <button class="lang-btn" data-lang="zh" onclick="setLanguage('zh')">🇨🇳 ZH</button>
+        <div class="option">
+            <input type="checkbox" id="optUppercase">
+            <label id="lblUppercase">Büyük Harf</label>
         </div>
-
-        <!-- CONTROL PANEL -->
-        <div class="control-panel">
-            <div class="input-group">
-                <input type="number" id="countInput" value="10" min="1" max="100000" placeholder="Count">
-            </div>
-
-            <div class="btn-group">
-                <button class="btn btn-primary" id="generateBtn" onclick="generate()">🚀 GENERATE</button>
-                <button class="btn btn-danger" onclick="clearAll()">🗑️ CLEAR</button>
-                <button class="btn btn-success" onclick="saveEmails()">💾 SAVE</button>
-            </div>
-
-            <div class="quick-buttons">
-                <button class="quick-btn" onclick="quickGenerate(1)">1</button>
-                <button class="quick-btn" onclick="quickGenerate(5)">5</button>
-                <button class="quick-btn" onclick="quickGenerate(10)">10</button>
-                <button class="quick-btn" onclick="quickGenerate(50)">50</button>
-                <button class="quick-btn" onclick="quickGenerate(100)">100</button>
-                <button class="quick-btn" onclick="quickGenerate(500)">500</button>
-                <button class="quick-btn" onclick="quickGenerate(1000)">1000</button>
-                <button class="quick-btn" onclick="quickGenerate(5000)">5000</button>
-                <button class="quick-btn" onclick="quickGenerate(10000)">10K</button>
-            </div>
+        <div class="option">
+            <input type="checkbox" id="optSpecial">
+            <label id="lblSpecial">Özel Karakter</label>
         </div>
+        <div class="option">
+            <input type="checkbox" id="optDots">
+            <label id="lblDots">Nokta Ekle</label>
+        </div>
+        <div class="option">
+            <label id="lblLength">Uzunluk:</label>
+            <input type="number" id="lengthInput" value="6" min="3" max="15">
+        </div>
+        <div class="option">
+            <label id="lblDomain">Domain:</label>
+            <select id="domainSelect">
+                <option value="@gmail.com">@gmail.com</option>
+                <option value="@yahoo.com">@yahoo.com</option>
+                <option value="@outlook.com">@outlook.com</option>
+                <option value="@hotmail.com">@hotmail.com</option>
+                <option value="@protonmail.com">@protonmail.com</option>
+            </select>
+        </div>
+    </div>
 
-        <!-- OPTIONS -->
-        <div class="options-grid">
-            <div class="option-item">
-                <label id="optLength">Length: 6</label>
-                <input type="range" id="lengthSlider" min="3" max="15" value="6" step="1" 
-                       oninput="document.getElementById('optLength').textContent='Length: '+this.value">
-            </div>
-            <div class="option-item">
-                <label id="optNumbers">Include Numbers</label>
-                <label class="switch">
-                    <input type="checkbox" id="numbersSwitch">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="option-item">
-                <label id="optUppercase">Include Uppercase</label>
-                <label class="switch">
-                    <input type="checkbox" id="uppercaseSwitch">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="option-item">
-                <label id="optSpecial">Special Chars</label>
-                <label class="switch">
-                    <input type="checkbox" id="specialSwitch">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="option-item">
-                <label id="optDots">Allow Dots</label>
-                <label class="switch">
-                    <input type="checkbox" id="dotsSwitch">
-                    <span class="slider"></span>
-                </label>
-            </div>
-            <div class="option-item">
-                <label id="optPrefix">Prefix:</label>
-                <input type="text" id="prefixInput" placeholder="pre" style="flex:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:5px; padding:5px; color:#fff; width:60px;">
-            </div>
-            <div class="option-item">
-                <label id="optSuffix">Suffix:</label>
-                <input type="text" id="suffixInput" placeholder="suf" style="flex:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:5px; padding:5px; color:#fff; width:60px;">
-            </div>
-            <div class="option-item">
-                <label id="optDomain">Domain:</label>
-                <select id="domainSelect" style="flex:1; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:5px; padding:5px; color:#fff;">
-                    <option value="@gmail.com">@gmail.com</option>
-                    <option value="@yahoo.com">@yahoo.com</option>
-                    <option value="@outlook.com">@outlook.com</option>
-                    <option value="@hotmail.com">@hotmail.com</option>
-                    <option value="@protonmail.com">@protonmail.com</option>
-                    <option value="@mail.com">@mail.com</option>
-                    <option value="@yandex.com">@yandex.com</option>
-                    <option value="@aol.com">@aol.com</option>
-                </select>
-            </div>
-    
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="mail-list" id="mailList">
+        <div class="empty-message" id="emptyMsg">
+            📭 Henüz mail yok
+            <span>"Oluştur" butonuna tıkla</span>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-label" id="statTotal">Toplam</div>
+            <div class="stat-value" id="totalCount">0</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label" id="statUnique">Benzersiz</div>
+            <div class="stat-value" id="uniqueCount">0</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-label" id="statSpeed">Hız</div>
+            <div class="stat-value" id="speedDisplay">0/s</div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============ DİL VERİLERİ ============
+const LANG = {
+    tr: {
+        title: '📧 Gmail Oluşturucu',
+        subtitle: '⚡ 6 haneli · Sadece harf',
+        generate: '🚀 OLUŞTUR',
+        clear: '🗑️ TEMİZLE',
+        save: '💾 KAYDET',
+        empty: '📭 Henüz mail yok',
+        emptySub: '"Oluştur" butonuna tıkla',
+        total: 'Toplam',
+        unique: 'Benzersiz',
+        speed: 'Hız',
+        numbers: 'Sayı Ekle',
+        uppercase: 'Büyük Harf',
+        special: 'Özel Karakter',
+        dots: 'Nokta Ekle',
+        length: 'Uzunluk:',
+        domain: 'Domain:',
+        generated: '✅ Oluşturuldu!',
+        copied: '📋 Kopyalandı!',
+        saved: '✅ Kaydedildi!',
+        cleared: '🗑️ Temizlendi!',
+        noEmails: '❌ Mail yok!'
+    },
+    en: {
+        title: '📧 Gmail Creator',
+        subtitle: '⚡ 6 chars · Letters only',
+        generate: '🚀 GENERATE',
+        clear: '🗑️ CLEAR',
+        save: '💾 SAVE',
+        empty: '📭 No emails yet',
+        emptySub: 'Click "Generate" to start',
+        total: 'Total',
+        unique: 'Unique',
+        speed: 'Speed',
+        numbers: 'Add Numbers',
+        uppercase: 'Uppercase',
+        special: 'Special Chars',
+        dots: 'Add Dots',
+        length: 'Length:',
+        domain: 'Domain:',
+        generated: '✅ Generated!',
+        copied: '📋 Copied!',
+        saved: '✅ Saved!',
+        cleared: '🗑️ Cleared!',
+        noEmails: '❌ No emails!'
+    },
+    de: {
+        title: '📧 Gmail Ersteller',
+        subtitle: '⚡ 6 Zeichen · Nur Buchstaben',
+        generate: '🚀 ERZEUGEN',
+        clear: '🗑️ LÖSCHEN',
+        save: '💾 SPEICHERN',
+        empty: '📭 Keine E-Mails',
+        emptySub: 'Klick "Erzeugen"',
+        total: 'Gesamt',
+        unique: 'Einzigartig',
+        speed: 'Geschwindigkeit',
+        numbers: 'Zahlen',
+        uppercase: 'Großbuchstaben',
+        special: 'Sonderzeichen',
+        dots: 'Punkte',
+        length: 'Länge:',
+        domain: 'Domain:',
+        generated: '✅ Erzeugt!',
+        copied: '📋 Kopiert!',
+        saved: '✅ Gespeichert!',
+        cleared: '🗑️ Gelöscht!',
+        noEmails: '❌ Keine E-Mails!'
+    },
+    es: {
+        title: '📧 Creador Gmail',
+        subtitle: '⚡ 6 caracteres · Solo letras',
+        generate: '🚀 GENERAR',
+        clear: '🗑️ LIMPIAR',
+        save: '💾 GUARDAR',
+        empty: '📭 Sin correos',
+        emptySub: 'Click "Generar"',
+        total: 'Total',
+        unique: 'Únicos',
+        speed: 'Velocidad',
+        numbers: 'Números',
+        uppercase: 'Mayúsculas',
+        special: 'Caracteres Especiales',
+        dots: 'Puntos',
+        length: 'Longitud:',
+        domain: 'Dominio:',
+        generated: '✅ Generado!',
+        copied: '📋 Copiado!',
+        saved: '✅ Guardado!',
+        cleared: '🗑️ Limpiado!',
+        noEmails: '❌ Sin correos!'
+    },
+    fr: {
+        title: '📧 Créateur Gmail',
+        subtitle: '⚡ 6 caractères · Lettres uniquement',
+        generate: '🚀 GÉNÉRER',
+        clear: '🗑️ EFFACER',
+        save: '💾 ENREGISTRER',
+        empty: '📭 Aucun email',
+        emptySub: 'Cliquez "Générer"',
+        total: 'Total',
+        unique: 'Uniques',
+        speed: 'Vitesse',
+        numbers: 'Nombres',
+        uppercase: 'Majuscules',
+        special: 'Caractères Spéciaux',
+        dots: 'Points',
+        length: 'Longueur:',
+        domain: 'Domaine:',
+        generated: '✅ Généré!',
+        copied: '📋 Copié!',
+        saved: '✅ Enregistré!',
+        cleared: '🗑️ Effacé!',
+        noEmails: '❌ Pas d\'emails!'
+    },
+    it: {
+        title: '📧 Creatore Gmail',
+        subtitle: '⚡ 6 caratteri · Solo lettere',
+        generate: '🚀 GENERA',
+        clear: '🗑️ PULISCI',
+        save: '💾 SALVA',
+        empty: '📭 Nessuna email',
+        emptySub: 'Clicca "Genera"',
+        total: 'Totale',
+        unique: 'Unici',
+        speed: 'Velocità',
+        numbers: 'Numeri',
+        uppercase: 'Maiuscole',
+        special: 'Caratteri Speciali',
+        dots: 'Punti',
+        length: 'Lunghezza:',
+        domain: 'Dominio:',
+        generated: '✅ Generato!',
+        copied: '📋 Copiato!',
+        saved: '✅ Salvato!',
+        cleared: '🗑️ Pulito!',
+        noEmails: '❌ Nessuna email!'
+    },
+    pt: {
+        title: '📧 Criador Gmail',
+        subtitle: '⚡ 6 caracteres · Apenas letras',
+        generate: '🚀 GERAR',
+        clear: '🗑️ LIMPAR',
+        save: '💾 SALVAR',
+        empty: '📭 Sem emails',
+        emptySub: 'Clique "Gerar"',
+        total: 'Total',
+        unique: 'Únicos',
+        speed: 'Velocidade',
+        numbers: 'Números',
+        uppercase: 'Maiúsculas',
+        special: 'Caracteres Especiais',
+        dots: 'Pontos',
+        length: 'Comprimento:',
+        domain: 'Domínio:',
+        generated: '✅ Gerado!',
+        copied: '📋 Copiado!',
+        saved: '✅ Salvo!',
+        cleared: '🗑️ Limpo!',
+        noEmails: '❌ Sem emails!'
+    },
+    ru: {
+        title: '📧 Создатель Gmail',
+        subtitle: '⚡ 6 символов · Только буквы',
+        generate: '🚀 СОЗДАТЬ',
+        clear: '🗑️ ОЧИСТИТЬ',
+        save: '💾 СОХРАНИТЬ',
+        empty: '📭 Нет писем',
+        emptySub: 'Нажмите "Создать"',
+        total: 'Всего',
+        unique: 'Уникальных',
+        speed: 'Скорость',
+        numbers: 'Цифры',
+        uppercase: 'Заглавные',
+        special: 'Спецсимволы',
+        dots: 'Точки',
+        length: 'Длина:',
+        domain: 'Домен:',
+        generated: '✅ Создано!',
+        copied: '📋 Скопировано!',
+        saved: '✅ Сохранено!',
+        cleared: '🗑️ Очищено!',
+        noEmails: '❌ Нет писем!'
+    },
+    ar: {
+        title: '📧 منشئ Gmail',
+        subtitle: '⚡ 6 أحرف · أحرف فقط',
+        generate: '🚀 إنشاء',
+        clear: '🗑️ مسح',
+        save: '💾 حفظ',
+        empty: '📭 لا توجد رسائل',
+        emptySub: 'انقر "إنشاء"',
+        total: 'المجموع',
+        unique: 'فريد',
+        speed: 'السرعة',
+        numbers: 'أرقام',
+        uppercase: 'أحرف كبيرة',
+        special: 'رموز خاصة',
+        dots: 'نقاط',
+        length: 'الطول:',
+        domain: 'النطاق:',
+        generated: '✅ تم الإنشاء!',
+        copied: '📋 تم النسخ!',
+        saved: '✅ تم الحفظ!',
+        cleared: '🗑️ تم المسح!',
+        noEmails: '❌ لا توجد رسائل!'
+   
